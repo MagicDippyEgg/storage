@@ -1,0 +1,3 @@
+如果打不开游戏或者字体显示有问题或者不好看，可以尝试把两个字体都装上。
+PlantsVsZombies(95)ori.exe是没有替换bgm的版本
+PlantsVsZombies(95)bgm.exe是替换了bgm后的版本
