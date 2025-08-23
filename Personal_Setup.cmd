@@ -16,12 +16,10 @@ echo Installing Floorp...
 winget install --id=Ablaze.Floorp -e --silent
 
 :: ========================
-:: 3. GitHub Desktop (MSI silent)
+:: 3. GitHub Desktop (winget silent)
 :: ========================
-echo Downloading GitHub Desktop...
-powershell -Command "Invoke-WebRequest -Uri 'https://central.github.com/deployments/desktop/desktop/latest/win32?format=msi' -OutFile '%USERPROFILE%\Downloads\GitHubDesktop.msi'"
-echo Installing GitHub Desktop silently...
-msiexec /i "%USERPROFILE%\Downloads\GitHubDesktop.msi" /quiet /norestart
+echo Installing GitHub Desktop...
+winget install --id=GitHub.GitHubDesktop -e --silent
 
 :: ========================
 :: 4. Discord (winget silent)
