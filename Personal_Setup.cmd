@@ -4,12 +4,10 @@ echo    One-Click Personal Windows Setup
 echo =========================================
 
 :: ========================
-:: 1. Steam (manual installer)
+:: 1. Steam (winget silent)
 :: ========================
-echo Downloading Steam...
-powershell -Command "Invoke-WebRequest -Uri 'https://cdn.akamai.steamstatic.com/client/installer/SteamSetup.exe' -OutFile '%USERPROFILE%\Downloads\SteamSetup.exe'"
-echo Running Steam installer (manual)...
-start "" "%USERPROFILE%\Downloads\SteamSetup.exe"
+echo Installing Steam...
+winget install --id Valve.Steam --exact --silent
 
 :: ========================
 :: 2. Floorp (winget silent)
@@ -26,12 +24,10 @@ echo Installing GitHub Desktop silently...
 msiexec /i "%USERPROFILE%\Downloads\GitHubDesktop.msi" /quiet /norestart
 
 :: ========================
-:: 4. Discord (EXE silent)
+:: 4. Discord (winget silent)
 :: ========================
 echo Downloading Discord...
-powershell -Command "Invoke-WebRequest -Uri 'https://discord.com/api/downloads/distributions/app/installers/latest?channel=stable&platform=win&arch=x64' -OutFile '%USERPROFILE%\Downloads\DiscordSetup.exe'"
-echo Installing Discord silently...
-start /wait "" "%USERPROFILE%\Downloads\DiscordSetup.exe" /S
+winget install --id=Discord.Discord -e --silent
 
 :: ========================
 :: 5. Bloxstrap (winget silent)
@@ -49,9 +45,7 @@ winget install --id=PrismLauncher.PrismLauncher -e --silent
 :: Optional: Clean up downloaded installers
 :: ========================
 echo Cleaning up downloaded installers...
-del "%USERPROFILE%\Downloads\SteamSetup.exe" /f /q
 del "%USERPROFILE%\Downloads\GitHubDesktop.msi" /f /q
-del "%USERPROFILE%\Downloads\DiscordSetup.exe" /f /q
 
 echo =========================================
 echo All apps installed successfully!
