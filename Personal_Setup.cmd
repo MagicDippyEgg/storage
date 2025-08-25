@@ -40,6 +40,12 @@ echo Installing PrismLauncher...
 winget install --id=PrismLauncher.PrismLauncher -e --silent
 
 :: ========================
+:: 7. SVG Thumbnail Extension (winget silent)
+:: ========================
+echo Installing PrismLauncher...
+winget install ThioJoe.SvgThumbnailExtension --silent
+
+:: ========================
 :: Optional: Clean up downloaded installers
 :: ========================
 echo Cleaning up downloaded installers...
