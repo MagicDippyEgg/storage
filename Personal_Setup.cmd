@@ -46,7 +46,7 @@ echo Installing PrismLauncher...
 winget install ThioJoe.SvgThumbnailExtension --silent
 
 :: ========================
-:: Optional: Clean up downloaded installers
+:: 8. Clean up downloaded installers
 :: ========================
 echo Cleaning up downloaded installers...
 del "%USERPROFILE%\Downloads\GitHubDesktop.msi" /f /q
@@ -54,4 +54,18 @@ del "%USERPROFILE%\Downloads\GitHubDesktop.msi" /f /q
 echo =========================================
 echo All apps installed successfully!
 echo =========================================
+
+:: ========================
+:: Change Personalization
+:: ========================
+echo Enabling Dark Mode
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize" /v AppsUseLightTheme /t REG_DWORD /d 0 /f
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize" /v SystemUsesLightTheme /t REG_DWORD /d 0 /f
+echo Moving Task Bar
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\StuckRects3" /v Settings /t REG_BINARY /d 2800000001000000010000000000000003000000000000000000000000000000 /f
+
+echo =========================================
+echo Personalization changed successfully!
+echo =========================================
+
 pause
