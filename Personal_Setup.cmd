@@ -61,8 +61,9 @@ echo =========================================
 echo Enabling Dark Mode
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize" /v AppsUseLightTheme /t REG_DWORD /d 0 /f
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize" /v SystemUsesLightTheme /t REG_DWORD /d 0 /f
-echo Moving Task Bar
-reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\StuckRects3" /v Settings /t REG_BINARY /d 2800000001000000010000000000000003000000000000000000000000000000 /f
+echo Restarting explorer.exe
+taskkill /f /im explorer.exe
+start explorer.exe
 
 echo =========================================
 echo Personalization changed successfully!
